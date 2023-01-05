@@ -1,10 +1,12 @@
-import { useState } from 'react'
-
-const App = () => {
-
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Login';
+function App() {
   return (
-    <h1>Hellow</h1>
-  )
+    <Routes>
+      <Route path="/login" element={ <Login /> } />
+      <Route path="/" element={ <Navigate to="/login" /> } />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
