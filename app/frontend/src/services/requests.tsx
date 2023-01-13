@@ -15,7 +15,7 @@ export const requests = () => ({
     signin: async (email: string, password: string) => {
         return {
             user: { id: 3, name: 'José', email: 'jose@gmail.com' },
-            token: '123456789'
+            token: 'Tokenasdhasha'
         };
         const response = await api.post('/signin', { email, password });
         return response.data;

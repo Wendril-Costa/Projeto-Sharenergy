@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/Auth/AuthContext";
 
@@ -8,6 +8,13 @@ export const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [checked, setChecked] = useState(localStorage.getItem('checke') === 'true');
+
+    useEffect(() => {
+        if (checked === true) {
+             navigate('/random-user')
+        };
+    }, []);
 
 
     const handleLogin = async () => {
@@ -37,6 +44,18 @@ export const Login = () => {
                 onChange={e => setPassword(e.target.value)}
                 placeholder="Digite sua senha"
             />
+
+            <input
+               type="checkbox"
+               onChange={
+                (e) => {
+                  localStorage.setItem('checke',`${e.target.checked}`);
+                  setChecked(e.target.checked);
+                  console.log(e.target.checked)
+                }
+            }
+            />
+            <label>Remember me</label>
             <button onClick={handleLogin}>Logar</button>
         </div>
     );
