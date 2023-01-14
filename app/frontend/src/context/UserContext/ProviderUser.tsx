@@ -12,8 +12,7 @@ export const ProviderUser = ({ children }: { children: JSX.Element }) => {
 
     useEffect(() => {
       const getUsers = async () => {
-        const data = await randomUser('?results=50')
-        console.log(data.results)
+        const data = await randomUser('?results=70')
         setUsers(data.results)
       }
       getUsers();

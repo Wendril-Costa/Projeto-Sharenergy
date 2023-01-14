@@ -1,21 +1,14 @@
+import ButtonSignout from "../../components/ButtonSignout";
 import CardUsers from "../../components/CardUsers";
 import Pagination from "../../components/Pagination";
 import UserFilter from "../../components/UserFilter";
-
-// const handleLogout = async () => {
-//     navigate('/'); 
-//     auth.signout();
-//     localStorage.removeItem('checke')
-//     window.location.href = window.location.href;
-//   }
-
-
 
 export const PageRandomUser = () => {
 
     return (
         <main>
-            {/* <h2>RandomUser</h2> */}
+            <h2>RandomUser</h2> 
+            <ButtonSignout />
             <UserFilter />
             <CardUsers />
             <Pagination />
