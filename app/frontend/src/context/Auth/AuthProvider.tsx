@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { requests } from '../../services/requests';
+import { requests } from '../../services/loginRequests';
 import { User } from "../../types/User";
 import { AuthContext } from "./AuthContext";
 

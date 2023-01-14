@@ -12,6 +12,7 @@ export const requests = () => ({
         const response = await api.post('/validate', { token });
         return response.data;
     },
+
     signin: async (email: string, password: string) => {
         return {
             user: { id: 3, name: 'José', email: 'jose@gmail.com' },
@@ -20,6 +21,7 @@ export const requests = () => ({
         const response = await api.post('/signin', { email, password });
         return response.data;
     },
+
     logout: async () => {
         return { status: true };
         const response = await api.post('/logout');
