@@ -1,5 +1,6 @@
 import CardUsers from "../../components/CardUsers";
-import { ProviderUser } from '../../context/UserContext/ProviderUser';
+import Pagination from "../../components/Pagination";
+import UserFilter from "../../components/UserFilter";
 
 // const handleLogout = async () => {
 //     navigate('/'); 
@@ -13,8 +14,11 @@ import { ProviderUser } from '../../context/UserContext/ProviderUser';
 export const PageRandomUser = () => {
 
     return (
-        <ProviderUser>
+        <main>
+            {/* <h2>RandomUser</h2> */}
+            <UserFilter />
             <CardUsers />
-        </ProviderUser>
+            <Pagination />
+         </main>
     );
 }

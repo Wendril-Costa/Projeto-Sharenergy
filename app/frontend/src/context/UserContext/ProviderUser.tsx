@@ -1,10 +1,14 @@
 import { useEffect, useState } from "react";
 import { randomUser } from "../../services/randomUserRequests";
-import { MyContext } from "./UserContext";
+import { UserContext } from "./UserContext";
 
 export const ProviderUser = ({ children }: { children: JSX.Element }) => {
 
     const [users, setUsers] = useState([])
+    const [filter, setFilter] = useState('');
+    const [userFilter, setUserFilter] = useState('');
+    const [usersPerPage, setUsersPerPage] = useState(4)
+    const [currentPage, setCurrentPage] = useState(0)
 
     useEffect(() => {
       const getUsers = async () => {
@@ -16,12 +20,20 @@ export const ProviderUser = ({ children }: { children: JSX.Element }) => {
       }, []);
 
     const contextValues = {
-        users
+        users,
+        filter,
+        setFilter,
+        usersPerPage,
+        setUsersPerPage,
+        currentPage,
+        setCurrentPage,
+        userFilter,
+        setUserFilter,
       };
     
     return (
-        <MyContext.Provider value={ contextValues }>
+        <UserContext.Provider value={ contextValues }>
             {children}
-        </MyContext.Provider>
+        </UserContext.Provider>
     );
 }
