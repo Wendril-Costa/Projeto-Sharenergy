@@ -1,21 +1,28 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { MyContext } from "../context/UserContext/UserContext";
+import Pagination from "./Pagination";
 
 const CardUsers = () => {
-    const {
-       users
-    } = useContext(MyContext);
+    const { users } = useContext(MyContext);
+
+    const [usersPerPage, setUsersPerPage] = useState(5)
+    const [currentPage, setCurrentPage] = useState(0)
+
+    const pages = Math.ceil(users.length / usersPerPage)
+    const startIndex = currentPage * usersPerPage
+    const endIndex = startIndex + usersPerPage
+    const currentUsers = users.slice(startIndex, endIndex)
 
     return (
         <div>
             <h2>RandomUser</h2>
-            {
-                users.map(({ login, picture, name: { first, last }, email, registered: { age } }: any, index: number) => (
+            
+            {currentUsers.map(({ login, picture, name: { first, last }, email, registered: { age } }: any) => (
                     <div key={login.uuid}>
                         <img
-                        src={picture.large}
-                        className="profile-pic"
-                        alt="profile-img"
+                            src={picture.large}
+                            className="profile-pic"
+                            alt="profile-img"
                         />
                         <div>
                         <p>{`${first} ${last}`}</p>
@@ -26,6 +33,8 @@ const CardUsers = () => {
                     </div>
                 ))
               }
+
+            <Pagination pages={pages} setCurrentPage={setCurrentPage}/>
         </div>
         
     );
