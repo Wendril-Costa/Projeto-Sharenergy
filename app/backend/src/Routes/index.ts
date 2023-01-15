@@ -1,8 +1,14 @@
 import { Router } from 'express'
-import app from '../Api/app'
+import RegisterController from '../Controllers/RegisterController';
 
-const router = Router()
 
-router.get('/', (req,res) => res.send("Funcionando"))
+const routes = Router()
 
-export default router
+routes.get('/', (req,res) => res.send("Funcionando"))
+
+routes.post(
+    '/register',
+    (req, res, next) => new RegisterController(req, res, next).create(),
+  );
+
+export default routes
