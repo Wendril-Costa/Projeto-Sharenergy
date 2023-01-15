@@ -1,5 +1,8 @@
-import express from 'express';
+import express from 'express'
+import appConfig from './Config'
 
-const app = express();
+const app = express()
 
-export default app;
+appConfig(app)
+
+export default app
