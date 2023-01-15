@@ -1,6 +1,6 @@
-import IRegister from '../../Interfaces/IRegister';
+import IClientRegister from '../../Interfaces/IClientRegister';
 
-class Register {
+class ClientRegister {
   protected id: string | undefined;
   protected name: string;
   protected username: string;
@@ -10,7 +10,7 @@ class Register {
   protected cpf: number;
   protected password: string;
 
-  constructor(register: IRegister) {
+  constructor(register: IClientRegister) {
     this.id = register.id;
     this.name = register.name;
     this.username = register.username;
@@ -22,4 +22,4 @@ class Register {
   } 
 }
 
-export default Register;
+export default ClientRegister;

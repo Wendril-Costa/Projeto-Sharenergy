@@ -1,19 +1,14 @@
 import { Schema } from 'mongoose';
-import IRegister from '../Interfaces/IRegister';
+import IUserRegister from '../Interfaces/IUserRegister';
 import AbstractODM from './AbstractODM';
 
-class UserODM extends AbstractODM<IRegister> {
+class UserODM extends AbstractODM<IUserRegister> {
   constructor() {
-    const schema = new Schema<IRegister >({
-      name: { type: String, required: true },
+    const schema = new Schema<IUserRegister >({
       username: { type: String, required: true },
-      email: { type: String, required: true },
-      telefone: { type: Number, required: false },
-      endereço: { type: String, required: true },
-      cpf: { type: Number, required: true },
       password: { type: String, required: true },
     });
-    super(schema, 'Car');
+    super(schema, 'User');
   }
 }
 

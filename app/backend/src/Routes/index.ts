@@ -1,5 +1,6 @@
 import { Router } from 'express'
-import RegisterController from '../Controllers/RegisterController';
+import ClientRegisterController from '../Controllers/ClientRegisterController';
+import UserRegisterController from '../Controllers/UserRegisterController';
 
 
 const routes = Router()
@@ -7,8 +8,13 @@ const routes = Router()
 routes.get('/', (req,res) => res.send("Funcionando"))
 
 routes.post(
-    '/register',
-    (req, res, next) => new RegisterController(req, res, next).create(),
+    '/client-register',
+    (req, res, next) => new ClientRegisterController(req, res, next).ClientCreate(),
   );
+
+  routes.post(
+    '/user-register',
+    (req, res, next) => new UserRegisterController(req, res, next).UserCreate(),
+  );  
 
 export default routes
