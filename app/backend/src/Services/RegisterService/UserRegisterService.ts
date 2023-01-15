@@ -1,7 +1,7 @@
-import UserRegister from '../Domains/Register/user';
+import UserRegister from '../../Domains/user';
 import bcrypt from 'bcrypt'
-import IUser from '../Interfaces/IUser';
-import UserODM from '../Models/UserODM';
+import IUser from '../../Interfaces/IUser';
+import UserODM from '../../Models/UserODM';
 
 class UserRegisterService {
   private createUserDomain(register: IUser | null): UserRegister | null {

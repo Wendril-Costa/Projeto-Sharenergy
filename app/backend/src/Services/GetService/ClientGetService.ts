@@ -1,6 +1,6 @@
-import ClientGet from '../Domains/Register/client';
-import IClient from '../Interfaces/IClient';
-import ClientODM from '../Models/ClientODM';
+import ClientGet from '../../Domains/client';
+import IClient from '../../Interfaces/IClient';
+import ClientODM from '../../Models/ClientODM';
 
 class ClientGetService {
   private createClientDomain(get: IClient | null): ClientGet | null {

@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import ClientGetController from '../Controllers/ClientGetRegister';
-import ClientRegisterController from '../Controllers/ClientRegisterController';
-import UserGetController from '../Controllers/UserGetRegister';
-import UserRegisterController from '../Controllers/UserRegisterController';
+import ClientGetController from '../Controllers/GetController/ClientGetController';
+import ClientRegisterController from '../Controllers/RegisterController/ClientRegisterController';
+import UserGetController from '../Controllers/GetController/UserGetController';
+import UserRegisterController from '../Controllers/RegisterController/UserRegisterController';
+import UserLoginController from '../Controllers/LoginController/UserLoginController';
 
 
 const routes = Router()
@@ -27,6 +28,11 @@ routes.get(
 routes.get(
   '/user-get',
   (req, res, next) => new UserGetController(req, res, next).UserGetAll(),
+); 
+
+routes.post(
+  '/login',
+  (req, res, next) => new UserLoginController(req, res, next).UserLogin(),
 ); 
 
 

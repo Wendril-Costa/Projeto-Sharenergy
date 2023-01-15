@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import ClientGetService from '../Services/ClientGetService'
+import ClientGetService from '../../Services/GetService/ClientGetService'
 
 class ClientGetController {
   private req: Request;

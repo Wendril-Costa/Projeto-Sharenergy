@@ -1,4 +1,4 @@
-import IUser from '../../Interfaces/IUser';
+import IUser from '../Interfaces/IUser';
 
 class UserRegister {
   protected id: string | undefined;

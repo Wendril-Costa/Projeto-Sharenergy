@@ -1,6 +1,6 @@
-import UserGet from '../Domains/Register/user';
-import IUser from '../Interfaces/IUser';
-import UserODM from '../Models/UserODM';
+import UserGet from '../../Domains/user';
+import IUser from '../../Interfaces/IUser';
+import UserODM from '../../Models/UserODM';
 
 class UserGetService {
   private createUserDomain(get: IUser | null): UserGet | null {

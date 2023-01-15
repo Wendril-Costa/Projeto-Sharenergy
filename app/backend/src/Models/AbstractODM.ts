@@ -25,6 +25,10 @@ import {
       return this.model.find({});
     }
   
+    public async findByName(username: string): Promise<T | null> {
+      return this.model.findOne({ username });
+    }
+  
   
     // public async update(id: string, update: T): Promise<T | null> {
     //   return this.model.findByIdAndUpdate(

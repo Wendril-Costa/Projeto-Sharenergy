@@ -1,4 +1,4 @@
-import IClient from '../../Interfaces/IClient';
+import IClient from '../Interfaces/IClient';
 
 class ClientRegister {
   protected id: string | undefined;

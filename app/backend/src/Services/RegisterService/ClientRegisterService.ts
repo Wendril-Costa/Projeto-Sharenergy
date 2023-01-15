@@ -1,7 +1,7 @@
-import ClientRegister from '../Domains/Register/client';
+import ClientRegister from '../../Domains/client';
 import bcrypt from 'bcrypt'
-import IClient from '../Interfaces/IClient';
-import ClientODM from '../Models/ClientODM';
+import IClient from '../../Interfaces/IClient';
+import ClientODM from '../../Models/ClientODM';
 
 class ClientRegisterService {
   private createClientDomain(register: IClient | null): ClientRegister | null {

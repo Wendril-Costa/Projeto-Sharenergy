@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import IClient from '../Interfaces/IClient';
-import ClientRegisterService from '../Services/ClientRegisterService';
+import IClient from '../../Interfaces/IClient';
+import ClientRegisterService from '../../Services/RegisterService/ClientRegisterService';
 
 class ClientRegisterController {
   private req: Request;

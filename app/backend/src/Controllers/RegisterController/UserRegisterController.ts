@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
-import IUser from '../Interfaces/IUser';
-import UserRegisterService from '../Services/UserRegisterService';
+import IUser from '../../Interfaces/IUser';
+import UserRegisterService from '../../Services/RegisterService/UserRegisterService';
 
 class UserRegisterController {
   private req: Request;
