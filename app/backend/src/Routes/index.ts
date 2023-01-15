@@ -4,6 +4,8 @@ import ClientRegisterController from '../Controllers/RegisterController/ClientRe
 import UserGetController from '../Controllers/GetController/UserGetController';
 import UserRegisterController from '../Controllers/RegisterController/UserRegisterController';
 import UserLoginController from '../Controllers/LoginController/UserLoginController';
+import ClientUpdateController from '../Controllers/UpdateService/ClientUpdateService';
+import ClientDeleteController from '../Controllers/DeleteService/ClientDeleteService';
 
 
 const routes = Router()
@@ -35,5 +37,14 @@ routes.post(
   (req, res, next) => new UserLoginController(req, res, next).UserLogin(),
 ); 
 
+routes.put(
+  '/client/:name',
+  (req, res, next) => new ClientUpdateController(req, res, next).ClientUpdate(),
+);
+
+routes.delete(
+  '/client/:name',
+  (req, res, next) => new ClientDeleteController(req, res, next).ClientDelete(),
+);
 
 export default routes

@@ -28,13 +28,20 @@ import {
     public async findByName(username: string): Promise<T | null> {
       return this.model.findOne({ username });
     }
+
+    public async findByCpf(cpf: number): Promise<T | null> {
+      return this.model.findOne({ cpf });
+    }
   
-  
-    // public async update(id: string, update: T): Promise<T | null> {
-    //   return this.model.findByIdAndUpdate(
-    //     { _id: id }, 
-    //     { ...update as UpdateQuery<T> },
-    //     { new: true },
-    //   );
-    // }
+    public async update(cpf: number, update: T): Promise<T | null> {
+      return this.model.findOneAndUpdate(
+        { _cpf: cpf }, 
+        { ...update as UpdateQuery<T> },
+        { new: true },
+      );
+    }
+
+    public async delete(cpf: number): Promise<T | null> {
+      return this.model.remove(cpf);
+    }
   }

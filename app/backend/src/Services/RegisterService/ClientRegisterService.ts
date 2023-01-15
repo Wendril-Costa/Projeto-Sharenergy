@@ -1,12 +1,12 @@
-import ClientRegister from '../../Domains/client';
+import Client from '../../Domains/client';
 import bcrypt from 'bcrypt'
 import IClient from '../../Interfaces/IClient';
 import ClientODM from '../../Models/ClientODM';
 
 class ClientRegisterService {
-  private createClientDomain(register: IClient | null): ClientRegister | null {
+  private createClientDomain(register: IClient | null): Client | null {
     if (register) {
-      return new ClientRegister(register);
+      return new Client(register);
     }
     return null;
   }
