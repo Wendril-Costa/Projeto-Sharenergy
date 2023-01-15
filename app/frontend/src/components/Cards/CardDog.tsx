@@ -1,11 +1,9 @@
 import { useContext, useEffect, useState } from "react"
 import { RandomDogContext } from "../../context/RandomDogContext/RandomDogContext"
-import { randomDog } from "../../services/randomDogRequests"
-
+import { getRandomDog } from "../../utils/getRandomDogPhoto"
 
 const CardDog = () => {
-    const { dogs } = useContext(RandomDogContext)
-    console.log(dogs)
+    const { dogs, setDogs } = useContext(RandomDogContext)
 
     return (
         <div>
@@ -13,7 +11,7 @@ const CardDog = () => {
                 src={`${dogs}`}
                 alt="dog-img"
             />
-            <button onClick={() => location.reload()}>Refresh</button>
+            <button onClick={() => getRandomDog(setDogs)}>Refresh</button>
         </div>
         
     )
