@@ -10,7 +10,6 @@ class UserLoginService {
   public async UserLogin(login: IUser) {
     const userODM = new UserODM()
     const userLogin = await userODM.findByName(login.username);
-    console.log(userLogin)
 
     if (!userLogin || !checkPassword(userLogin.password, login.password)) {
       throw new UnauthorizedError('Username ou Password são inválidos')
@@ -19,7 +18,6 @@ class UserLoginService {
     const { id, username } = userLogin
 
     const token = creatToken({ id, username })
-  
     return await token
   }
 }

@@ -15,8 +15,12 @@ class ClientGetController {
   }
 
   public async ClientGetAll() {
+
     try {
-      const clients = await this.service.ClientGetAll();
+      const { authorization: token } = this.req.headers
+      console.log(this.req.headers)
+  
+      const clients = await this.service.ClientGetAll(token);
       return this.res.status(200).json(clients);
     } catch (error) {
       this.next(error);

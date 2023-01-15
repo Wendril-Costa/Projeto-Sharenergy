@@ -23,7 +23,7 @@ class UserLoginController {
 
     try {
       const token = await this.service.UserLogin(login);
-      console.log(token)
+      
       return this.res.status(200).json(token);
     } catch (error) {
       this.next(error);
