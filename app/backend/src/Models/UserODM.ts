@@ -1,10 +1,10 @@
 import { Schema } from 'mongoose';
-import IUserRegister from '../Interfaces/IUserRegister';
+import IUser from '../Interfaces/IUser';
 import AbstractODM from './AbstractODM';
 
-class UserODM extends AbstractODM<IUserRegister> {
+class UserODM extends AbstractODM<IUser> {
   constructor() {
-    const schema = new Schema<IUserRegister >({
+    const schema = new Schema<IUser>({
       username: { type: String, required: true },
       password: { type: String, required: true },
     });

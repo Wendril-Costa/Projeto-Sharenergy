@@ -1,4 +1,4 @@
-import IClientRegister from '../../Interfaces/IClientRegister';
+import IClient from '../../Interfaces/IClient';
 
 class ClientRegister {
   protected id: string | undefined;
@@ -10,7 +10,7 @@ class ClientRegister {
   protected cpf: number;
   protected password: string;
 
-  constructor(register: IClientRegister) {
+  constructor(register: IClient) {
     this.id = register.id;
     this.name = register.name;
     this.username = register.username;

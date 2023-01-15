@@ -1,17 +1,17 @@
 import UserRegister from '../Domains/Register/user';
 import bcrypt from 'bcrypt'
-import IUserRegister from '../Interfaces/IUserRegister';
+import IUser from '../Interfaces/IUser';
 import UserODM from '../Models/UserODM';
 
 class UserRegisterService {
-  private createUserDomain(register: IUserRegister | null): UserRegister | null {
+  private createUserDomain(register: IUser | null): UserRegister | null {
     if (register) {
       return new UserRegister(register);
     }
     return null;
   }
 
-  public async UserCreate(register: IUserRegister) {
+  public async UserCreate(register: IUser) {
     const passwordHash = await bcrypt.hash(register.password, 8)
     register.password = passwordHash
 

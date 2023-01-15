@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import IClientRegister from '../Interfaces/IClientRegister';
+import IClient from '../Interfaces/IClient';
 import ClientRegisterService from '../Services/ClientRegisterService';
 
 class ClientRegisterController {
@@ -16,7 +16,7 @@ class ClientRegisterController {
   }
 
   public async ClientCreate() {
-    const register: IClientRegister = {
+    const register: IClient = {
       name: this.req.body.name,
       username: this.req.body.username,
       email: this.req.body.email,

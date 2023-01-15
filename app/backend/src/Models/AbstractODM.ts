@@ -21,13 +21,10 @@ import {
       return this.model.create({ ...obj });
     }
   
-    // public async getAll(): Promise<T[]> {
-    //   return this.model.find({});
-    // }
-  
-    public async findCpf(cpf: number): Promise<T | null> {
-      return this.model.findOne({ _cpf: cpf });
+    public async getAll(): Promise<T[]> {
+      return this.model.find({});
     }
+  
   
     // public async update(id: string, update: T): Promise<T | null> {
     //   return this.model.findByIdAndUpdate(

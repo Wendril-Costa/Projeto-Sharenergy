@@ -1,10 +1,10 @@
 import { Schema } from 'mongoose';
-import IClientRegister from '../Interfaces/IClientRegister';
+import IClient from '../Interfaces/IClient';
 import AbstractODM from './AbstractODM';
 
-class ClientODM extends AbstractODM<IClientRegister> {
+class ClientODM extends AbstractODM<IClient> {
   constructor() {
-    const schema = new Schema<IClientRegister >({
+    const schema = new Schema<IClient >({
       name: { type: String, required: true },
       username: { type: String, required: true },
       email: { type: String, required: true },

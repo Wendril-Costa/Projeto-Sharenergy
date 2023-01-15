@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import IUserRegister from '../Interfaces/IUserRegister';
+import IUser from '../Interfaces/IUser';
 import UserRegisterService from '../Services/UserRegisterService';
 
 class UserRegisterController {
@@ -16,7 +16,7 @@ class UserRegisterController {
   }
 
   public async UserCreate() {
-    const register: IUserRegister = {
+    const register: IUser = {
       username: this.req.body.username,
       password: this.req.body.password,
     };

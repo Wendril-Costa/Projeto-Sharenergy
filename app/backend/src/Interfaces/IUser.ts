@@ -1,7 +1,7 @@
-interface IUserRegister{
+interface IUser{
     id?: string
     username: string
     password: string
   }
   
-  export default IUserRegister
+  export default IUser
