@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { randomUser } from "../../services/randomUserRequests"
-import { UserContext } from "./UserContext"
+import { RandomUserContext } from "./RandomUserContext"
 
 export const ProviderUser = ({ children }: { children: JSX.Element }) => {
 
@@ -31,8 +31,8 @@ export const ProviderUser = ({ children }: { children: JSX.Element }) => {
       }
     
     return (
-        <UserContext.Provider value={ contextValues }>
+        <RandomUserContext.Provider value={ contextValues }>
             {children}
-        </UserContext.Provider>
+        </RandomUserContext.Provider>
     )
 }

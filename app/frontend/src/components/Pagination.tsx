@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { UserContext } from '../context/UserContext/UserContext'
+import { RandomUserContext } from '../context/UserContext/RandomUserContext'
 import '../styles/components/pagination/index.css'
 
 const Pagination = () => {
-    const { users, usersPerPage, setCurrentPage } = useContext(UserContext)
+    const { users, usersPerPage, setCurrentPage } = useContext(RandomUserContext)
     const pages = Math.ceil(users.length / usersPerPage)
 
     return (

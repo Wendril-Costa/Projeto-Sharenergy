@@ -1,8 +1,9 @@
 import * as reactHttpCats from 'react-http-cats';
-import { useState } from "react"
+import { useContext } from "react"
+import { HttpCatContext } from '../context/HttpCatContext/HttpCatContext';
 
 const HttpCat = () => {
-    const [statusCat, setStatusCat] = useState('')
+    const { statusCat, setStatusCat } = useContext(HttpCatContext)
 
     return (
         <div>
@@ -12,7 +13,7 @@ const HttpCat = () => {
                 value={ statusCat }
                 onChange={ e => setStatusCat(e.target.value)}
             />
-            <reactHttpCats.HttpCat status={ statusCat } />
+            <reactHttpCats.HttpCat status={ Number(statusCat) } />
         </div>
     )
 }

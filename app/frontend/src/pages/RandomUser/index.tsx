@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom"
-import ButtonSignout from "../../components/ButtonSignout"
-import CardUsers from "../../components/CardUsers"
+import ButtonHttpCat from "../../components/Buttons/ButtonHttpCat"
+import ButtonRandomDog from "../../components/Buttons/ButtonRandomDog"
+import ButtonSignout from "../../components/Buttons/ButtonSignout"
+import CardUsers from "../../components/Cards/CardUsers"
 import Pagination from "../../components/Pagination"
 import UserFilter from "../../components/UserFilter"
 
@@ -10,7 +12,8 @@ export const PageRandomUser = () => {
     return (
         <main>
             <h2>Random User</h2> 
-            <button onClick={() => navigate('/http-cat')  }>HttpCat</button>
+            <ButtonHttpCat />
+            <ButtonRandomDog />
             <ButtonSignout />
             <UserFilter />
             <CardUsers />

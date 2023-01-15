@@ -1,8 +1,8 @@
 import { useContext } from "react"
-import { UserContext } from "../context/UserContext/UserContext"
+import { RandomUserContext } from "../context/UserContext/RandomUserContext"
 
 export const usersFilter = () => {
-    const { users, filter } = useContext(UserContext)
+    const { users, filter } = useContext(RandomUserContext)
 
     const searchLowerCase = filter.toLowerCase()
 
@@ -16,7 +16,7 @@ export const usersFilter = () => {
 }
 
 const UserFilter = () => {
-    const { filter, setFilter } = useContext(UserContext)
+    const { filter, setFilter } = useContext(RandomUserContext)
     
     return (
         <div>

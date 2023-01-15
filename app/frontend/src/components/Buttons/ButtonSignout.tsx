@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/Auth/AuthContext"
+import { AuthContext } from "../../context/Auth/AuthContext"
 
 const ButtonSignout = () => {
     const auth = useContext(AuthContext)

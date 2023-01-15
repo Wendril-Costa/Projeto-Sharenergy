@@ -1,9 +1,9 @@
 import { useContext } from "react"
-import { UserContext } from "../context/UserContext/UserContext"
-import { usersFilter } from "./UserFilter"
+import { RandomUserContext } from "../../context/UserContext/RandomUserContext"
+import { usersFilter } from "../UserFilter"
 
 const CardUsers = () => {
-    const { currentPage, usersPerPage } = useContext(UserContext)
+    const { currentPage, usersPerPage } = useContext(RandomUserContext)
 
     const startIndex = currentPage * usersPerPage
     const endIndex = startIndex + usersPerPage
