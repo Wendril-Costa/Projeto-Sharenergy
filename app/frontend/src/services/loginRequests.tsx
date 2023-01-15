@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const api = axios.create({
     baseURL: process.env.REACT_APP_API
@@ -9,8 +9,8 @@ export const requests = () => ({
         return {
             user: { id: 3, name: 'José', email: 'jose@gmail.com' }
         };
-        const response = await api.post('/validate', { token });
-        return response.data;
+        const response = await api.post('/validate', { token })
+        return response.data
     },
 
     signin: async (email: string, password: string) => {
@@ -18,13 +18,13 @@ export const requests = () => ({
             user: { id: 3, name: 'José', email: 'jose@gmail.com' },
             token: 'Tokenasdhasha'
         };
-        const response = await api.post('/signin', { email, password });
-        return response.data;
+        const response = await api.post('/signin', { email, password })
+        return response.data
     },
 
     logout: async () => {
-        return { status: true };
-        const response = await api.post('/logout');
-        return response.data;
+        return { status: true }
+        const response = await api.post('/logout')
+        return response.data
     }
 });

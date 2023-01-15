@@ -1,6 +1,9 @@
 module.exports = {
+  parser: "babel-eslint",
   parserOptions: {
-    project: './tsconfig.json'
+    project: './tsconfig.json',
+    sourceType: "module",
+    ecmaVersion: 2020
   },
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 'off',

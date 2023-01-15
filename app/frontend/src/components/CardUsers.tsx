@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext/UserContext";
-import { usersFilter } from "./UserFilter";
+import { useContext } from "react"
+import { UserContext } from "../context/UserContext/UserContext"
+import { usersFilter } from "./UserFilter"
 
 const CardUsers = () => {
-    const { currentPage, usersPerPage } = useContext(UserContext);
+    const { currentPage, usersPerPage } = useContext(UserContext)
 
     const startIndex = currentPage * usersPerPage
     const endIndex = startIndex + usersPerPage
@@ -29,7 +29,7 @@ const CardUsers = () => {
               }
         </div>
         
-    );
+    )
 }
 
 export default CardUsers

@@ -1,8 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
-import { PageLogin} from './pages/Login';
-import { PageRandomUser } from './pages/RandomUser';
-import { RequireAuth } from './context/Auth/RequireAuth';
-import { ProviderUser } from './context/UserContext/ProviderUser';
+import { Route, Routes } from 'react-router-dom'
+import { PageLogin} from './pages/Login'
+import { PageRandomUser } from './pages/RandomUser'
+import { RequireAuth } from './context/Auth/RequireAuth'
+import { ProviderUser } from './context/UserContext/ProviderUser'
+import { PageHttpCat } from './pages/HttpCat'
+import { ProviderHttpCat } from './context/HttpCatContext/ProviderHttpCat'
 
 function App() {
   return (
@@ -17,9 +19,15 @@ function App() {
               </ProviderUser>
             </RequireAuth>
           } />
+        <Route path="/http-cat" element={
+          <RequireAuth>
+            <ProviderHttpCat>
+              <PageHttpCat/>
+            </ProviderHttpCat>
+          </RequireAuth>}/>
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

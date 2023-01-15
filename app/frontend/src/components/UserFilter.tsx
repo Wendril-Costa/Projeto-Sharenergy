@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { UserContext } from "../context/UserContext/UserContext";
+import { useContext } from "react"
+import { UserContext } from "../context/UserContext/UserContext"
 
 export const usersFilter = () => {
-    const { users, filter } = useContext(UserContext);
-    
+    const { users, filter } = useContext(UserContext)
+
     const searchLowerCase = filter.toLowerCase()
 
     return users.filter(
@@ -16,7 +16,7 @@ export const usersFilter = () => {
 }
 
 const UserFilter = () => {
-    const { filter, setFilter } = useContext(UserContext);
+    const { filter, setFilter } = useContext(UserContext)
     
     return (
         <div>

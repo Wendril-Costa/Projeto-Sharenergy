@@ -18,7 +18,7 @@ const ButtonSignout = () => {
             {auth.user && <button onClick={handleLogout}>Sair</button>}
         </div>
         
-    );
+    )
 }
 
 export default ButtonSignout

@@ -1,29 +1,29 @@
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../context/Auth/AuthContext";
+import { useContext, useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../context/Auth/AuthContext"
 
 const Login = () => {
-    const auth = useContext(AuthContext);
-    const navigate = useNavigate();
+    const auth = useContext(AuthContext)
+    const navigate = useNavigate()
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [checked, setChecked] = useState(localStorage.getItem('checke') === 'true');
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [checked, setChecked] = useState(localStorage.getItem('checke') === 'true')
 
     useEffect(() => {
         if (checked === true) {
              navigate('/random-user')
-        };
-    }, []);
+        }
+    }, [])
 
 
     const handleLogin = async () => {
         if (email && password) {
-            const isLogged = await auth.signin(email, password);
+            const isLogged = await auth.signin(email, password)
             if (isLogged) {
-                navigate('/random-user');
+                navigate('/random-user')
             } else {
-                alert("Não deu certo.");
+                alert("Não deu certo.")
             }
         }
     }
@@ -49,8 +49,8 @@ const Login = () => {
                type="checkbox"
                onChange={
                 (e) => {
-                  localStorage.setItem('checke',`${e.target.checked}`);
-                  setChecked(e.target.checked);
+                  localStorage.setItem('checke',`${e.target.checked}`)
+                  setChecked(e.target.checked)
                   console.log(e.target.checked)
                 }
             }
@@ -58,7 +58,7 @@ const Login = () => {
             <label>Remember me</label>
             <button onClick={handleLogin}>Logar</button>
         </div>
-    );
+    )
 }
 
 export default Login
