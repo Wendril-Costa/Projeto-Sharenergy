@@ -1,5 +1,3 @@
-import UserRegister from '../../Domains/user';
-import bcrypt from 'bcrypt'
 import IUser from '../../Interfaces/IUser';
 import UserODM from '../../Models/UserODM';
 import { UnauthorizedError } from '../../err/unauthorized-error';

@@ -16,12 +16,12 @@ class UserLoginController {
   }
 
   public async UserLogin() {
-    const login: IUser = {
-      username: this.req.body.username,
-      password: this.req.body.password,
-    };
 
     try {
+      const login: IUser = {
+        username: this.req.body.username,
+        password: this.req.body.password,
+      };
       const token = await this.service.UserLogin(login);
       
       return this.res.status(200).json(token);

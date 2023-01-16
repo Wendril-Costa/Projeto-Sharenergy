@@ -15,7 +15,7 @@ const ButtonSignout = () => {
 
     return (
         <div>
-            {auth.user && <button onClick={handleLogout}>Sair</button>}
+            {<button onClick={handleLogout}>Sair</button>}
         </div>
         
     )

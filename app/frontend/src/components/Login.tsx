@@ -6,7 +6,7 @@ const Login = () => {
     const auth = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const [email, setEmail] = useState('')
+    const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [checked, setChecked] = useState(localStorage.getItem('checke') === 'true')
 
@@ -18,8 +18,8 @@ const Login = () => {
 
 
     const handleLogin = async () => {
-        if (email && password) {
-            const isLogged = await auth.signin(email, password)
+        if (username && password) {
+            const isLogged = await auth.signin(username, password)
             if (isLogged) {
                 navigate('/random-user')
             } else {
@@ -34,8 +34,8 @@ const Login = () => {
 
             <input
                 type="text"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
+                value={username}
+                onChange={e => setUsername(e.target.value)}
                 placeholder="Digite seu e-mail"
             />
             <input
