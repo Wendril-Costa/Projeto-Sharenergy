@@ -13,8 +13,9 @@ export const Menu = () => {
                 <ButtonRandomUser />
                 <ButtonHttpCat />
                 <ButtonRandomDog />
+                <ButtonClientList />
                 <ButtonSignout />
-                <ButtonClientList /></>
+                </>
             :
                 ''
         
