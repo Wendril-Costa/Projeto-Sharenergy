@@ -41,7 +41,7 @@ const Login = () => {
                 type="text"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
-                placeholder="Digite seu e-mail"
+                placeholder="Digite seu username"
             />
             <input
                 type="password"
