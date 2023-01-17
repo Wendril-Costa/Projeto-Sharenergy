@@ -5,6 +5,7 @@ import { RandomUserContext } from "./RandomUserContext"
 export const ProviderUser = ({ children }: { children: JSX.Element }) => {
 
     const [users, setUsers] = useState([])
+    const [menu, setMenu] = useState(false)
     const [filter, setFilter] = useState('')
     const [userFilter, setUserFilter] = useState('')
     const [usersPerPage, setUsersPerPage] = useState(4)
@@ -28,6 +29,8 @@ export const ProviderUser = ({ children }: { children: JSX.Element }) => {
         setCurrentPage,
         userFilter,
         setUserFilter,
+        menu,
+        setMenu
       }
     
     return (

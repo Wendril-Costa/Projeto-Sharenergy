@@ -6,6 +6,7 @@ import UserRegisterController from '../Controllers/RegisterController/UserRegist
 import UserLoginController from '../Controllers/LoginController/UserLoginController';
 import ClientUpdateController from '../Controllers/UpdateService/ClientUpdateService';
 import ClientDeleteController from '../Controllers/DeleteService/ClientDeleteService';
+import auth from '../Auth/auth';
 
 
 const routes = Router()
@@ -38,12 +39,12 @@ routes.post(
 ); 
 
 routes.put(
-  '/client/:name',
+  '/client/:cpf',
   (req, res, next) => new ClientUpdateController(req, res, next).ClientUpdate(),
 );
 
 routes.delete(
-  '/client/:name',
+  '/client/:cpf',
   (req, res, next) => new ClientDeleteController(req, res, next).ClientDelete(),
 );
 

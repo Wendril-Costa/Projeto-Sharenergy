@@ -1,5 +1,4 @@
 import Client from '../../Domains/client';
-import { NotFoundError } from '../../err/not-found';
 import IClient from '../../Interfaces/IClient';
 import ClientODM from '../../Models/ClientODM';
 
@@ -11,9 +10,9 @@ class ClientDeleteService {
     return null;
   }
 
-  public async ClientDelete(cpf: number) {
+  public async ClientDelete(deleteClient: IClient) {
     const clientODM = new ClientODM();
-    const client = await clientODM.delete(cpf);      
+    const client = await clientODM.delete(deleteClient.cpf);      
     return this.createClientDomain(client);
   } 
 }

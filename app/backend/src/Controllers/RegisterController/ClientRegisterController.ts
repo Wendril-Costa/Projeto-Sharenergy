@@ -21,12 +21,13 @@ class ClientRegisterController {
       username: this.req.body.username,
       email: this.req.body.email,
       telefone: this.req.body.telefone,
-      endereço: this.req.body.endereço,
+      endereço: this.req.body.endereco,
       cpf: this.req.body.cpf,
-      password: this.req.body.password,
+      password: ''
     };
 
     try {
+      console.log(register)
       const newRegister = await this.service.ClientCreate(register);
       console.log(newRegister)
       const result = {

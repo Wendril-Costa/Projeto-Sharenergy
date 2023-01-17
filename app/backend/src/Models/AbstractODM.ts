@@ -35,13 +35,13 @@ import {
   
     public async update(cpf: number, update: T): Promise<T | null> {
       return this.model.findOneAndUpdate(
-        { _cpf: cpf }, 
+        { cpf: cpf }, 
         { ...update as UpdateQuery<T> },
         { new: true },
       );
     }
 
     public async delete(cpf: number): Promise<T | null> {
-      return this.model.remove(cpf);
+      return this.model.findOneAndDelete({ cpf: cpf});
     }
   }

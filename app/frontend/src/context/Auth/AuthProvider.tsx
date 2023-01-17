@@ -8,18 +8,8 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
     const api = requests()
 
     useEffect(() => {
-        const validateToken = async () => {
-            const storageData = localStorage.getItem('authToken')
-            if (storageData) {
-                const data = await api.validateToken(storageData)
-                if (data.user) {
-                    setUser(data.user)
-                }
-            }
-        }
-        validateToken()
+        localStorage.getItem('authToken')
     }, [])
-    // colocar 'api' dentro das chaves está vazio pois não existe a api ainda.
 
     const signin = async (email: string, password: string) => {
         const data = await api.signin(email, password)

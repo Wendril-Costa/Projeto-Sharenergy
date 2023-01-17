@@ -6,6 +6,7 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    'requireConfigFile': 0,
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
     '@typescript-eslint/promise-function-async': 'off',

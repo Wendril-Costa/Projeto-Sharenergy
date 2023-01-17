@@ -7,12 +7,21 @@ import { PageHttpCat } from './pages/HttpCat'
 import { ProviderHttpCat } from './context/HttpCatContext/ProviderHttpCat'
 import { PageRandomDog } from './pages/RandomDog'
 import { ProviderRandomDog } from './context/RandomDogContext/ProviderRandomDog'
+import { Menu } from './pages/Menu'
+import { useEffect } from 'react'
+import { PageClient } from './pages/ClientList'
+import { ProviderClient } from './context/ClientContext/ProviderClient'
 
 function App() {
+  useEffect(() => {
+        
+  }, [])
   return (
     <div className="App">
+      <ProviderUser><Menu /></ProviderUser>
+      
       <Routes>
-        <Route path="/" element={<PageLogin />} />
+        <Route path="/"element={<ProviderUser><PageLogin /></ProviderUser>} />
         <Route path="/random-user" element={
             <RequireAuth>
               <ProviderUser>
@@ -34,6 +43,14 @@ function App() {
             <ProviderRandomDog>
               <PageRandomDog />
             </ProviderRandomDog>
+          </RequireAuth>
+        }
+        />
+        <Route path="/client-list" element={
+          <RequireAuth>
+            <ProviderClient>
+              <PageClient/>
+            </ProviderClient>
           </RequireAuth>
         }
         />

@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../context/Auth/AuthContext"
+import { RandomUserContext } from "../context/UserContext/RandomUserContext"
 
 const Login = () => {
     const auth = useContext(AuthContext)
+    const { setMenu} = useContext(RandomUserContext)
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('')
@@ -18,6 +20,8 @@ const Login = () => {
 
 
     const handleLogin = async () => {
+        setMenu(true)
+        
         if (username && password) {
             const isLogged = await auth.signin(username, password)
             if (isLogged) {
@@ -26,6 +30,7 @@ const Login = () => {
                 alert("Não deu certo.")
             }
         }
+        location.reload()
     }
 
     return (

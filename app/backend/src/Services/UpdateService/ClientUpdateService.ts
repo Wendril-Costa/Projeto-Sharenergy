@@ -11,14 +11,14 @@ class ClientUpdateService {
     return null;
   }
 
-  public async ClientUpdate(cpf: number, body: IClient) {
+  public async ClientUpdate(update: IClient) {
     const clientODM = new ClientODM();
 
-    const clientUp = await clientODM.findByCpf(cpf);
-
+    const clientUp = await clientODM.findByCpf(update.cpf);
+    console.log(clientUp)
     if (!clientUp) throw new NotFoundError('Client inválido')
 
-    const updatedCar = await clientODM.update(cpf, body);
+    const updatedCar = await clientODM.update(update.cpf, update);
     
     return this.createClientDomain(updatedCar);
   }
