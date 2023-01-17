@@ -32,7 +32,7 @@ const ClientRegister = () => {
     const handleDeletar= async () => {
         console.log(cpf)
         await api.delete({name, username, email, telefone, endereco, cpf})
-       
+        location.reload()
     }
     return (
         <div>

@@ -20,3 +20,5 @@
   6. `npm install`
   7.   Configurar seu MongoDb na pasta `backend/Models/Connection`
   9. `npm run dev`
+
+  Lin do youtube `https://youtu.be/W6qeSsdMjRc`
